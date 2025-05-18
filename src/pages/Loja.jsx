@@ -1,1 +1,0 @@
-export default function Loja() { return <div className='p-4'>Loja de Recompensas</div>; }

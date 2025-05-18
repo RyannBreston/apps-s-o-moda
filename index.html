@@ -1,12 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SuperModa</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="pt-BR" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corridinha SuperModa - Dashboard</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* Paleta de cores customizada */
+    :root {
+      --purple-dark: #6C63FF;
+      --pink: #FF6584;
+      --gray-light: #F7F7F7;
+      --gray-dark: #2E2E2E;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--gray-light);
+      color: var(--gray-dark);
+    }
+    .btn-primary {
+      background-color: var(--purple-dark);
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: var(--pink);
+    }
+    /* Scrollbar estilizado */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--gray-light);
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: var(--purple-dark);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <nav class="bg-purple-700 text-white shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-semibold tracking-wide">Corridinha SuperModa</h1>
+      <div>
+        <button class="btn-primary px-4 py-2 rounded-md font-semibold hover:bg-pink-500">Sair</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-6 py-8">
+
+    <!-- Dashboard Header -->
+    <section class="mb-8">
+      <h2 class="text-3xl font-semibold mb-2">Dashboard do Vendedor</h2>
+      <p class="text-gray-600">Visualize seu desempenho e ranking em tempo real.</p>
+    </section>
+
+    <!-- Cards Principais -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-lg shadow p-6 border-l-8 border-purple-600 hover:shadow-xl transition-shadow">
+        <h3 class="text-xl font-semibold mb-2">Meta Atual</h3>
+        <p class="text-4xl font-bold text-purple-700">75%</p>
+        <div class="w-full bg-gray-200 rounded-full h-4 mt-4">
+          <div class="bg-purple-600 h-4 rounded-full" style="width: 75%"></div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-6 border-l-8 border-pink-500 hover:shadow-xl transition-shadow">
+        <h3 class="text-xl font-semibold mb-2">Ticket Médio</h3>
+        <p class="text-4xl font-bold text-pink-500">R$ 156,40</p>
+      </div>
+
+      <div class="bg-white rounded-lg shadow p-6 border-l-8 border-gray-700 hover:shadow-xl transition-shadow">
+        <h3 class="text-xl font-semibold mb-2">Itens Vendidos</h3>
+        <p class="text-4xl font-bold text-gray-700">112</p>
+      </div>
+    </section>
+
+    <!-- Ranking em Tempo Real -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Ranking dos Vendedores - Corrida SuperModa</h2>
+
+      <div class="bg-white rounded-lg shadow p-6">
+        <!-- Exemplo de ranking - linha de progresso -->
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-semibold text-purple-700">RyanBreston</span>
+            <span class="font-semibold text-gray-600">80 pts</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-6">
+            <div class="bg-purple-600 h-6 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-semibold text-pink-500">MariaLoja</span>
+            <span class="font-semibold text-gray-600">65 pts</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-6">
+            <div class="bg-pink-500 h-6 rounded-full" style="width: 65%"></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-semibold text-gray-700">PedroVendas</span>
+            <span class="font-semibold text-gray-600">50 pts</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-6">
+            <div class="bg-gray-700 h-6 rounded-full" style="width: 50%"></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Notificações -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4">Notificações</h2>
+      <ul class="bg-white rounded-lg shadow p-4 space-y-3 max-w-md">
+        <li class="bg-purple-50 border-l-4 border-purple-600 p-3 rounded">
+          <strong>Você subiu para o 2º lugar!</strong> Continue assim para alcançar o topo.
+        </li>
+        <li class="bg-pink-50 border-l-4 border-pink-500 p-3 rounded">
+          <strong>Nova missão:</strong> Venda 10 produtos até sexta e ganhe +50 pontos.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-purple-700 text-white text-center py-4">
+    Desenvolvido por RyanBreston | Corridinha SuperModa &copy; 2025
+  </footer>
+
+</body>
 </html>
